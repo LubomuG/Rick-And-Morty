@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty Universe</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="icon" href="./img/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class="popup">
+        <div class="popup-close">×</div>
+    </div>
+
+    <div class="wrap">
+        <div class="homepage">
+            <p>Let's dive into the world of Rick and Morty!</p>
+        </div>
+        
+        <div class="characterspage">
+            <div class="page-title">Characters</div>
+            <div class="filters-container"></div>
+            <div class="characterContainer"></div>
+            <div class="pagination">
+                <button id="prevPage">‹</button>
+                <div class="pages-container"></div>
+                <button id="nextPage">›</button>
+            </div>
+        </div>
+        
+        <div class="episodespage" style="display: none;">
+            <div class="page-title">Episodes</div>
+            <!-- Search and filter container will be inserted here by JavaScript -->
+            <div class="episodesContainer"></div>
+        </div>
+        
+        <div class="locationspage" style="display: none;">
+            <div class="page-title">Locations</div>
+            <div class="page-subtitle">Locations that mentioned in the cartoon. Filter or view all on this page.</div>
+            <!-- Search and filter container will be inserted here by JavaScript -->
+            <div class="locationsContainer"></div>
+        </div>
+        
+        <div class="watchlistpage" style="display: none;">
+            <div class="page-title">My Watchlist</div>
+            
+            <!-- Search and Add Section -->
+            <div class="search-add-container">
+                <h3><i class="fas fa-search"></i> Search & Add Episodes</h3>
+                <div class="search-add-form">
+                    <div class="search-input-group">
+                        <div class="autocomplete-container">
+                            <input type="text" id="searchEpisode" placeholder="Type episode name or code...">
+                            <div class="autocomplete-dropdown"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="manual-add-group">
+                        <h4><i class="fas fa-plus-circle"></i> Quick Add by Code</h4>
+                        <button id="toggleQuickAdd" class="manual-add-btn" style="margin-bottom: 15px; background: linear-gradient(135deg, #f39c12, #e67e22);">
+                            <i class="fas fa-plus"></i> Show Quick Add Form
+                        </button>
+                        
+                        <div class="quick-add-form" style="display: none;">
+                            <div class="manual-add-form">
+                                <div class="form-group">
+                                    <label for="episodeCode"><i class="fas fa-hashtag"></i> Episode Code:</label>
+                                    <input type="text" id="episodeCode" placeholder="e.g., S01E01">
+                                </div>
+                                <div class="form-group">
+                                    <label for="episodeName"><i class="fas fa-tv"></i> Episode Name:</label>
+                                    <input type="text" id="episodeName" placeholder="e.g., Pilot">
+                                </div>
+                                <div class="form-group">
+                                    <label for="episodeDate"><i class="far fa-calendar-alt"></i> Air Date:</label>
+                                    <input type="text" id="episodeDate" placeholder="e.g., December 2, 2013">
+                                </div>
+                                <button id="manualAddBtn" class="manual-add-btn">
+                                    <i class="fas fa-plus"></i> Add Custom Episode
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Watchlist Content -->
+            <div class="watchlist-content">
+                <!-- Stats and episodes will be inserted here by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="BtnContainer">
+            <button class="allBtn" id="homeBtn"><i class="fa-solid fa-house"></i></button>
+            <button class="allBtn" id="charactersBtn"><img src="./img/characters_icon.png" alt="characters"></button>
+            <button class="allBtn" id="episodesBtn"><img src="./img/episods_icon.png" alt="episodes"></button>
+            <button class="allBtn" id="locationsBtn"><i class="fas fa-map-marker-alt"></i></button>
+            <button class="allBtn" id="watchlistBtn"><i class="fa-solid fa-bookmark"></i></button>
+        </div>
+    </div>
+    
+    <script src="./main.js"></script>
+</body>
+</html>
